@@ -1,0 +1,200 @@
+/* -------------------------------
+   Global
+---------------------------------*/
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #222;
+  background: #f8f8f8;
+}
+
+main {
+  padding: 1rem;
+}
+
+h1, h2 {
+  margin-top: 0;
+}
+
+/* -------------------------------
+   Header & Navigation
+---------------------------------*/
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  background: #004080;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.site-header .logo img {
+  height: 40px;
+}
+
+.top-nav {
+  display: flex;
+  gap: 1rem;
+}
+
+.top-nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.top-nav a:hover {
+  text-decoration: underline;
+}
+
+/* Hamburger menu for mobile */
+.hamburger-container {
+  display: none;
+}
+
+.hamburger {
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.mobile-menu {
+  position: absolute;
+  top: 60px;
+  right: 10px;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-menu a {
+  padding: 0.75rem 1rem;
+  color: #004080;
+  text-decoration: none;
+}
+
+.mobile-menu a:hover {
+  background: #f0f0f0;
+}
+
+/* -------------------------------
+   Terms Page
+---------------------------------*/
+.terms-page {
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.terms-shell {
+  background: rgba(255, 253, 253, 0.92);
+  max-width: 900px;
+  width: 100%;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(17, 17, 17, 0.2);
+}
+
+.lang-toggle {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.lang-toggle button {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.lang-toggle img {
+  width: 32px;
+  height: 24px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.terms-content {
+  line-height: 1.6;
+  margin-top: 1rem;
+  color: black;
+}
+
+/* -------------------------------
+   Pricelist Page
+---------------------------------*/
+.pricelist-page {
+  overflow-x: auto;
+}
+
+.pricelist-table {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 800px;
+  background: white;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+}
+
+.pricelist-table th,
+.pricelist-table td {
+  border: 1px solid #ddd;
+  padding: 0.5rem;
+  text-align: left;
+}
+
+.pricelist-table th {
+  background: #004080;
+  color: white;
+}
+
+.pricelist-table input {
+  width: 100%;
+  padding: 0.4rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* -------------------------------
+   Responsive Breakpoints
+---------------------------------*/
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .top-nav {
+    display: none;
+  }
+  .hamburger-container {
+    display: block;
+  }
+
+  .terms-shell {
+    padding: 1rem;
+  }
+}
+
+/* Phone */
+@media (max-width: 600px) {
+  .pricelist-table th:nth-child(1),
+  .pricelist-table td:nth-child(1),
+  .pricelist-table th:nth-child(4),
+  .pricelist-table td:nth-child(4),
+  .pricelist-table th:nth-child(6),
+  .pricelist-table td:nth-child(6) {
+    display: none; /* Hide SKU, Price, Unit on small screens */
+  }
+
+  .terms-shell {
+    padding: 0.75rem;
+  }
+}
