@@ -22,9 +22,8 @@
     "eject": "react-scripts eject"
   },
   "engines": {
-  "node": "18.x"
-},
-
+    "node": "20.x"
+  },
   "eslintConfig": {
     "extends": [
       "react-app",
@@ -42,5 +41,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "copyfiles": "^2.4.1"
   }
 }
