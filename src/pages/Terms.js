@@ -18,7 +18,7 @@ export default function Terms() {
   useEffect(() => {
     fetch(`https://sow-backend-jqpr.onrender.com/api/terms/${locale}`)
       .then(res => res.json())
-      .then(data => setTerms(data))
+      .then(data => setTerms(data.terms||data))
       .catch(err => console.error("Error fetching terms:", err));
   }, [locale]);
 
