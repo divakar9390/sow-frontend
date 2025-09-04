@@ -1,11 +1,14 @@
 import { useState, useEffect } from "react";
 import "./Style.css";
 
+API_KEY = process.env.REACT_APP_API_URL
+
+
 export default function PriceList() {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/products")
+    fetch(`${API_KEY}/api/products`)
       .then((res) => res.json())
       .then((data) => setItems(data))
       .catch((err) => console.error("Error fetching products:", err));
@@ -19,7 +22,7 @@ export default function PriceList() {
 
   const saveProduct = (id) => {
     const product = items.find((p) => p.id === id);
-    fetch(`http://localhost:5000/api/products/${id}`, {
+    fetch(`${API_KEY}/api/products/${id}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(product),
