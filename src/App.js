@@ -1,4 +1,4 @@
-import {BrowserRouter,Routes,Route,Link} from "react-router"
+import {BrowserRouter,Routes,Route,Link} from "react-router-dom"
 import Terms from "./pages/Terms"
 import PriceList from "./pages/PriceList"
 import Hamburger from "./pages/Hamburger";
