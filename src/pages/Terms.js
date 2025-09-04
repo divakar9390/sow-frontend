@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import './Style.css';
 
 
-const API_KEY = process.env.REACT_APP_API_URL
+
 const FLAGS = {
   en: "https://storage.123fakturere.no/public/flags/GB.png",
   sv: "https://storage.123fakturere.no/public/flags/SE.png",
@@ -16,7 +16,7 @@ export default function Terms() {
   const [terms, setTerms] = useState(null);
 
   useEffect(() => {
-    fetch(`${API_KEY}/api/terms/${locale}`)
+    fetch(`https://sow-backend-jqpr.onrender.com/api/terms/${locale}`)
       .then(res => res.json())
       .then(data => setTerms(data))
       .catch(err => console.error("Error fetching terms:", err));
