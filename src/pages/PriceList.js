@@ -8,11 +8,24 @@ export default function PriceList() {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
-    fetch(`https://sow-backend-jqpr.onrender.com/api/products`)
-      .then((res) => res.json())
-      .then((data) => setItems(data))
-      .catch((err) => console.error("Error fetching products:", err));
-  }, []);
+  fetch(`https://sow-backend-jqpr.onrender.com/api/products`)
+    .then((res) => res.json())
+    .then((data) => {
+      console.log("Fetched products:", data);
+
+      if (Array.isArray(data)) {
+        setItems(data);
+      } else if (data && Array.isArray(data.products)) {
+        setItems(data.products);
+      } else {
+        setItems([]); 
+      }
+    })
+    .catch((err) => {
+      console.error("Error fetching products:", err);
+      setItems([]); 
+    });
+}, []);
 
   const update = (id, field, value) => {
     setItems((prev) =>
