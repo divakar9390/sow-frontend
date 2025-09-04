@@ -1,14 +1,14 @@
 import { useState, useEffect } from "react";
 import "./Style.css";
 
-const API_KEY = process.env.REACT_APP_API_URL
+
 
 
 export default function PriceList() {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
-    fetch(`${API_KEY}/api/products`)
+    fetch(`https://sow-backend-jqpr.onrender.com/api/products`)
       .then((res) => res.json())
       .then((data) => setItems(data))
       .catch((err) => console.error("Error fetching products:", err));
@@ -22,7 +22,7 @@ export default function PriceList() {
 
   const saveProduct = (id) => {
     const product = items.find((p) => p.id === id);
-    fetch(`${API_KEY}/api/products/${id}`, {
+    fetch(`https://sow-backend-jqpr.onrender.com/api/products/${id}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(product),
