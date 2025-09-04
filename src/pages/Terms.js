@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import './Style.css';
 
 
-API_KEY = process.env.REACT_APP_API_URL
+const API_KEY = process.env.REACT_APP_API_URL
 const FLAGS = {
   en: "https://storage.123fakturere.no/public/flags/GB.png",
   sv: "https://storage.123fakturere.no/public/flags/SE.png",
